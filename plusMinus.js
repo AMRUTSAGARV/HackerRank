@@ -17,9 +17,7 @@ function plusminus(arr){           //arr=[]
     }
 console.log((positiveCount/n).toPrecision(6));
 console.log((negativeCount/n).toPrecision(6));
-console.log((zeroCount/n).toPrecision(6));
-
-
+console.log((zeroCount/n).toPrecision(6));98
 }
 
 plusminus([2,1,0,-1,-3])
