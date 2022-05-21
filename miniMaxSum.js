@@ -1,12 +1,25 @@
-function miniMaxSum(arr){
-    let smallNum=0;
-    let largeNum=0;
-    for (let i=0;i<arr.length;i++){
-        let maths=arr.splice(1);
-        console.log(maths);
-        if (maths > largeNum)largeNum=maths;
-        if (maths < smallNum) smallNum = maths;
+function miniMaxSum(arr) {
+  var arrClone1 = arr.slice();
+  var arrClone2 = arr.slice();
+
+  var arrMinor = arrClone1.sort(function (a, b) {
+    return a - b;
+  });
+  arrMinor.pop();
+
+  var arrMajor = arrClone2.sort(function (a, b) {
+    return b - a;
+  });
+  arrMajor.pop();
+
+  function getSum(a, b) {
+    return a + b;
   }
-  return (smallNum, largeNum);
-    }
-miniMaxSum([1,2,3,4,5,]);
+
+  var result1 = arrMinor.reduce(getSum);
+  var result2 = arrMajor.reduce(getSum);
+
+  console.log(`${result1} ${result2}`);
+}
+
+miniMaxSum([7, 12, 3, 1, 5]);
