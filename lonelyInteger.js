@@ -2,11 +2,9 @@
 // find the unique element
 
 const lonelyInt = (a) => {
-  let unique = a.filter(function (value) {
-    return a.indexOf(value) === a.lastIndexOf(value);
-  });
+  let uniqueGuy = a.filter((v, i) => a.indexOf(v) === a.lastIndexOf(v));
 
-  return unique[0];
+  return uniqueGuy;
 };
 
-console.log(lonelyInt([1, 2, 3, 4, 3, 2, 1]));
+console.log(lonelyInt([-1, 2, 5, 6, 2, 9, -1, 6, 5, -1, 3]));
